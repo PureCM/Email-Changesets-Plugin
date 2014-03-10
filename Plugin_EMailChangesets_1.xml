@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Plugin_EMailChangesets_Config.xml - rename to Plugin_EMailChangesets_1.xml (or _2, _3 for multiple etc.) and set Enabled to true-->
+<Config>
+  <!--Set Enabled to true to enable the plugin instance-->
+  <Enabled>false</Enabled>
+
+  <!--If this is enabled then logging information will be written to log.txt in the plugin directory-->
+  <EnableLog>false</EnableLog>
+
+  <!--If this is enabled then users will get a notification when a task or feature is assigned to them-->
+  <EnableTaskAssignNtfs>false</EnableTaskAssignNtfs>
+
+  <!--Pattern match for Repositories we want to process-->
+  <ReposPattern>.*</ReposPattern>
+
+  <!--Pattern match for Streams we want to process-->
+  <StreamPattern>.*</StreamPattern>
+
+  <!--Do we send an email when a developer submits a changeset to a feature-->
+  <IncludeFeatureChangesets>false</IncludeFeatureChangesets>
+
+  <!--Do we send an email when a changeset is merged-->
+  <IncludeMergeChangesets>false</IncludeMergeChangesets>
+
+  <!-- from address passed to SMTP when sending emails -->
+  <From>somebody@somecompany.com</From>
+
+  <!--List of recipients of the emails-->
+  <Recipients>
+    <Recipient>somebodyelse@somecompany.com</Recipient>
+  </Recipients>
+
+  <!--SMTP Server used for sending emails-->
+  <SMTPServer>localhost</SMTPServer>
+
+  <!--Define SMTP GeminiUser and Password if your server needs authentication-->
+  <SMTPUser></SMTPUser>
+  <SMTPPassword></SMTPPassword>
+
+  <!--Define the format of the Subject Used for email - {0} expands to Changeset Ref, {1} to Stream Name-->
+  <SubjectFormat>Changeset {0} submitted</SubjectFormat>
+
+  <!--Define a number of context lines to show when sending file differences-->
+  <ContextLines>3</ContextLines>
+
+  <!--Maximum file/revision size for which we will output differences-->
+  <MaxFileSizeForDiff>128000</MaxFileSizeForDiff>
+
+  <!--Maximum number of lines to display per file difference-->
+  <MaxDiffLines>100</MaxDiffLines>
+
+  <!--Maximum length of lines shown in differences-->
+  <MaxDiffLineLength>120</MaxDiffLineLength>
+
+  <!--Include changesets submitted in an isolated feature? -->
+  <IncludeFeatureChangesets>false</IncludeFeatureChangesets>
+
+  <!--Include changesets merged from other versions/features? -->
+  <IncludeMergeChangesets>false</IncludeMergeChangesets>
+
+  <!--CSS Stylesheet that is included in the HTML EMails-->
+  <CSS>
+  <![CDATA[
+body {
+       font-family: Arial, "Lucida Sans", Tahoma, sans-serif !important;
+       font-size: 11pt;
+     }
+.hdrt { font-weight: bold; }
+.ci {font-size: 9pt; text-align: left; vertical-align: top;}
+.ci tr th {font-weight: bold;}
+.diffdel {color: red; margin-top: 0px; margin-bottom: 0px;}
+.diffins {color: blue; margin-top: 0px; margin-bottom: 0px;}
+.diffend {color: orange;}
+  ]]>
+  </CSS>
+</Config>
